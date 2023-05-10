@@ -1,0 +1,41 @@
+#N canvas 342 275 552 468 10;
+#X symbolatom 147 299 50 0 0 0 - - -, f 50;
+#X floatatom 287 116 5 0 1e+07 1 scale.n #0-scale.n.r #0-scale.n.s
+, f 5;
+#X obj 96 98 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 64 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 95 159 rand.walk -10 10 1 3;
+#X obj 147 219 r \$0-scale.n.s;
+#X text 73 19 Quantize a stream of floats to the pitches of musical
+scales. Arguments: \$1 = scale name (or a float) – \$2: base note
+(sending a 0 to the abstraction will return this)., f 62;
+#X obj 95 118 metro 300;
+#X obj 95 139 rand.bang 70;
+#X obj 95 319 mtof;
+#X obj 95 339 pack f 127;
+#X obj 95 359 blip~ 16 3000;
+#X obj 95 404 dac~;
+#X obj 95 259 f2scale locrian 58;
+#X floatatom 287 136 5 0 127 1 base.note #0-base.note.r #0-base.note.s
+, f 5;
+#X obj 200 239 r \$0-base.note.s;
+#X floatatom 200 279 5 0 0 0 - - -, f 5;
+#X msg 115 189 print;
+#X text 158 188 print the list of scales;
+#X connect 2 0 7 0;
+#X connect 4 0 13 0;
+#X connect 5 0 13 1;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
+#X connect 8 0 3 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 0 12 1;
+#X connect 13 0 9 0;
+#X connect 13 1 0 0;
+#X connect 13 2 16 0;
+#X connect 15 0 13 2;
+#X connect 17 0 13 0;
