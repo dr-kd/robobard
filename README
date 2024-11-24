@@ -1,1 +1,5 @@
-# Robobard
+# Autogamelan
+
+Reverse fourier analysis based sequencer which uses LFO to track pitches and scale quantisation to assist with musical coherence.
+
+The result of this when plumbing it into a sine wave based oscillator is something that can produce coherent musical ideas which tend towards the style of indonesian gammelan music when you pick the right scale.
